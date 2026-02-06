@@ -9,21 +9,30 @@ A simple Next.js blog that works with markdown files.
 - ✅ Automatic post sorting by date
 - ✅ Tag system
 - ✅ Responsive design with Tailwind CSS
-- ✅ Dark mode support
+- ✅ Light/Dark mode toggle (manual control)
 - ✅ Static site generation
+- ✅ GitHub Pages deployment ready
 
 ## Getting Started
+
+### Prerequisites
+
+Make sure you have [pnpm](https://pnpm.io/) installed:
+
+```bash
+npm install -g pnpm
+```
 
 ### 1. Install Dependencies
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### 2. Run Development Server
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -60,8 +69,13 @@ blog-starter/
 │   └── posts/
 │       └── [slug]/
 │           └── page.tsx    # Individual post page
+├── components/
+│   └── ThemeToggle.tsx     # Light/dark mode toggle button
 ├── lib/
 │   └── posts.ts            # Functions to read and parse posts
+├── .github/
+│   └── workflows/
+│       └── nextjs.yml      # GitHub Actions workflow for deployment
 ├── package.json
 └── README.md
 ```
@@ -77,38 +91,69 @@ blog-starter/
 ## Building for Production
 
 ```bash
-npm run build
-npm start
+pnpm build
+pnpm start
 ```
 
-## Deployment
+## Deployment to GitHub Pages
 
-This blog is ready to deploy to:
+This blog is configured to automatically deploy to GitHub Pages using GitHub Actions.
 
-- **Vercel**: `vercel deploy`
-- **Netlify**: Connect your Git repository
-- **GitHub Pages**: Build and deploy the `out` directory
+### Setup Instructions:
 
-## Customization
+1. **Push your code to GitHub**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/yourusername/your-repo.git
+   git push -u origin main
+   ```
 
-### Styling
+2. **Enable GitHub Pages**
+   - Go to your repository settings
+   - Navigate to Pages (under Code and automation)
+   - Source: Select "GitHub Actions"
 
-The blog uses Tailwind CSS. Modify styles in:
-- `tailwind.config.js` - Tailwind configuration
-- `app/globals.css` - Global styles
-- Component files - Inline Tailwind classes
+3. **The workflow will automatically:**
+   - Trigger on every push to the `main` branch
+   - Build your Next.js site
+   - Deploy to GitHub Pages
 
-### Layout
+4. **Access your site at:**
+   ```
+   https://yourusername.github.io/your-repo-name/
+   ```
 
-Edit `app/layout.tsx` to customize the header, footer, and overall layout.
+### Manual Deployment
 
-### Home Page
+You can also trigger deployment manually:
+- Go to Actions tab in your repository
+- Select "Deploy Next.js site to Pages"
+- Click "Run workflow"
 
-Edit `app/page.tsx` to customize how posts are displayed on the home page.
+## Theme Customization
 
-### Post Page
+The blog features a subtle feminine color palette with manual light/dark mode control:
 
-Edit `app/posts/[slug]/page.tsx` to customize individual post layouts.
+### Light Mode
+- Warm cream backgrounds
+- Soft blush accents
+- Muted mauve for headings
+
+### Dark Mode
+- Deep plum/aubergine backgrounds
+- Warm mauve and blush accents
+
+Toggle between modes using the button in the top right corner.
+
+### Customizing Colors
+
+Modify the color palette in:
+- `tailwind.config.js` - Color definitions
+- `app/globals.css` - CSS variables
+- Component files - Update Tailwind classes
 
 ## License
 
