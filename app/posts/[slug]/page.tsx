@@ -1,4 +1,5 @@
 import { getPostData, getAllPostSlugs } from '@/lib/posts';
+import { basePath } from '@/lib/basePath';
 import Link from 'next/link';
 
 export async function generateStaticParams() {
@@ -14,7 +15,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
     <div className="max-w-3xl mx-auto">
       <Link 
-        href="/" 
+        href={`${basePath}/`}
         className="inline-block mb-8 text-blush-500 dark:text-blush-400 hover:text-blush-600 dark:hover:text-blush-300 transition-colors"
       >
         ← Back to all posts
