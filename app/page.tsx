@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold mb-8 text-mauve-600 dark:text-blush-300">
-        Latest Posts
+        Posts
       </h1>
       
       <div className="space-y-8">
@@ -48,7 +48,7 @@ export default function Home() {
         
         {posts.length === 0 && (
           <p className="text-center text-gray-600 dark:text-mauve-300 py-12">
-            No posts yet. Add some markdown files to the _posts directory!
+            No posts yet.
           </p>
         )}
       </div>

@@ -1,0 +1,7 @@
+# Blog Post Configuration
+# This file contains default values for new blog posts
+# can be overridden with cli flags
+
+author=Your Name
+# excerpt=A brief description of the post
+# tags=blog,general

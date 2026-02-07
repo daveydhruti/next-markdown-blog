@@ -4,14 +4,13 @@ A simple Next.js blog that works with markdown files.
 
 ## Features
 
-- ✅ Write posts in Markdown
-- ✅ Metadata support (title, date, author, tags, excerpt)
-- ✅ Automatic post sorting by date
-- ✅ Tag system
-- ✅ Responsive design with Tailwind CSS
-- ✅ Light/Dark mode toggle (manual control)
-- ✅ Static site generation
-- ✅ GitHub Pages deployment ready
+- Write posts in Markdown
+- Metadata support (title, date, author, tags, excerpt)
+- Automatic post sorting by date
+- Tag system
+- Responsive design with Tailwind CSS
+- Light/Dark mode toggle (manual control)
+- Static site generation
 
 ## Getting Started
 
@@ -23,21 +22,59 @@ Make sure you have [pnpm](https://pnpm.io/) installed:
 npm install -g pnpm
 ```
 
-### 1. Install Dependencies
+or remove it from `package.json` and use your prefered package manager. 
+
+### Install and Run
 
 ```bash
 pnpm install
-```
-
-### 2. Run Development Server
-
-```bash
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### 3. Create Blog Posts
+### Creating Blog Posts
+
+#### Method 1: Using the Fish Script
+
+Make the script executable:
+```bash
+chmod +x new-post.fish
+```
+
+Create a new post:
+```bash
+./new-post.fish my-awesome-post
+```
+
+With options:
+```bash
+./new-post.fish --title "My Awesome Post" --author "Jane Doe" --tags "nextjs,react" --excerpt "An amazing post about web dev" my-awesome-post
+```
+
+Short flags:
+```bash
+./new-post.fish -t "My Post" -a "Jane" -e "A cool post" my-post
+```
+
+Skip prompts (use defaults):
+```bash
+./new-post.fish --no-prompt my-post
+```
+
+**Setup default values:**
+Copy the example config file:
+```bash
+cp .post-config.example .post-config
+```
+
+Edit `.post-config` with your defaults:
+```
+author=Your Name
+tags=blog,general
+```
+
+#### Method 2: Manual Creation
 
 Add markdown files to the `_posts` directory with the following frontmatter format:
 
@@ -60,8 +97,6 @@ Write your blog post content using markdown...
 ```
 blog-starter/
 ├── _posts/                  # Your blog posts (markdown files)
-│   ├── post-1.md
-│   └── post-2.md
 ├── app/
 │   ├── layout.tsx          # Root layout with header/footer
 │   ├── page.tsx            # Home page (lists all posts)
@@ -76,6 +111,7 @@ blog-starter/
 ├── .github/
 │   └── workflows/
 │       └── nextjs.yml      # GitHub Actions workflow for deployment
+├── new-post.fish           # Script to create new posts
 ├── package.json
 └── README.md
 ```
@@ -88,54 +124,30 @@ blog-starter/
 - **tags** (optional): Array of tags
 - **excerpt** (optional): Short description shown on the home page
 
-## Building for Production
+## Script Reference
 
-```bash
-pnpm build
-pnpm start
-```
+The `new-post.fish` script supports the following options:
 
-## Deployment to GitHub Pages
+| Flag | Shorthand | Description |
+|------|-----------|-------------|
+| `--title` | `-t` | Post title |
+| `--author` | `-a` | Post author |
+| `--excerpt` | `-e` | Post excerpt/summary |
+| `--tags` | - | Comma-separated list of tags |
+| `--no-prompt` | - | Skip prompts for missing fields |
+| `--help` | `-h` | Show help message |
 
-This blog is configured to automatically deploy to GitHub Pages using GitHub Actions.
+**Argument order:** Flags can appear in any order, but the filename must be provided.
 
-### Setup Instructions:
-
-1. **Push your code to GitHub**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/your-repo.git
-   git push -u origin main
-   ```
-
-2. **Enable GitHub Pages**
-   - Go to your repository settings
-   - Navigate to Pages (under Code and automation)
-   - Source: Select "GitHub Actions"
-
-3. **The workflow will automatically:**
-   - Trigger on every push to the `main` branch
-   - Build your Next.js site
-   - Deploy to GitHub Pages
-
-4. **Access your site at:**
-   ```
-   https://yourusername.github.io/your-repo-name/
-   ```
-
-### Manual Deployment
-
-You can also trigger deployment manually:
-- Go to Actions tab in your repository
-- Select "Deploy Next.js site to Pages"
-- Click "Run workflow"
+**Priority for field values:**
+1. Command-line flags (highest priority)
+2. `.post-config` file
+3. Interactive prompts (if not using `--no-prompt`)
+4. Default values (lowest priority)
 
 ## Theme Customization
 
-The blog features a subtle feminine color palette with manual light/dark mode control:
+The blog features a subtle feminine color palette with manual light/dark mode control.
 
 ### Light Mode
 - Warm cream backgrounds
@@ -157,7 +169,8 @@ Modify the color palette in:
 
 ## License
 
-MIT
+[MIT](./LICENSE)
 
---- 
-Parts of this repository were created using Claude AI.
+---
+
+Parts of this repository were written using Claude AI.
