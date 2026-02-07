@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export',
   // basePath only for production (GitHub Pages)
-  basePath: process.env.NODE_ENV === 'production' ? '/blog' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/next-markdown-blog' : '',
   images: {
     unoptimized: true,
   },

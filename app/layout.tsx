@@ -38,7 +38,7 @@ export default function RootLayout({
                     My Blog
                   </a>
                   <div className="flex items-center gap-6">
-                    <a href="/about" className="text-gray-700 dark:text-mauve-200 hover:text-blush-500 dark:hover:text-blush-300 transition-colors">
+                    <a href={`${basePath}/about`} className="text-gray-700 dark:text-mauve-200 hover:text-blush-500 dark:hover:text-blush-300 transition-colors">
                       About
                     </a>
                     <ThemeToggle />
