@@ -33,6 +33,8 @@ module.exports = {
           400: '#bdb0ce',
           500: '#a594bc',
           600: '#8b77a8',
+          800: '#5a4a6a',
+          900: '#3d2f4d',
         },
         sage: {
           50: '#f8faf9',
@@ -49,5 +51,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
