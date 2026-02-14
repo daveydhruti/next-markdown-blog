@@ -12,7 +12,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const post = await getPostData(params.slug);
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-4xl mx-auto">
       <a 
         href={`${basePath}/`}
         className="inline-block mb-8 text-blush-500 dark:text-blush-400 hover:text-blush-600 dark:hover:text-blush-300 transition-colors"
