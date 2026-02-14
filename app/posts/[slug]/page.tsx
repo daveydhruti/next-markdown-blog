@@ -57,7 +57,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             prose-a:text-blush-500 dark:prose-a:text-blush-400 prose-a:no-underline hover:prose-a:underline
             prose-strong:text-gray-900 dark:prose-strong:text-mauve-100 prose-strong:font-semibold
             prose-em:text-gray-800 dark:prose-em:text-mauve-200 prose-em:italic
-            prose-code:text-mauve-600 dark:prose-code:text-blush-300 prose-code:bg-cream-100 dark:prose-code:bg-mauve-900/40 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
+            prose-code:text-blush-300 prose-code:bg-mauve-900/40 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
             prose-pre:bg-slate-900 dark:prose-pre:bg-black/40 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto
             prose-ul:list-disc prose-ul:ml-6 prose-ul:mb-4 prose-ul:text-gray-700 dark:prose-ul:text-mauve-200
             prose-ol:list-decimal prose-ol:ml-6 prose-ol:mb-4 prose-ol:text-gray-700 dark:prose-ol:text-mauve-200
