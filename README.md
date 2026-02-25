@@ -9,18 +9,10 @@ A simple Next.js blog that works with markdown files.
 - Automatic post sorting by date
 - Tag system
 - Responsive design with Tailwind CSS
-- Light/Dark mode toggle (manual control)
+- Light/Dark mode toggle 
 - Static site generation
 
 ## Getting Started
-
-### Prerequisites
-
-Make sure you have [pnpm](https://pnpm.io/) installed:
-
-```bash
-npm install -g pnpm
-```
 
 ### Install and Run
 
@@ -35,29 +27,24 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 #### Method 1: Using the Fish Script
 
-Make the script executable:
-```bash
-chmod +x new-post.fish
-```
-
 Create a new post (Use defaults):
 ```bash
-./new-post.fish my-awesome-post
+./create-post.fish my-awesome-post
 ```
 
 With options:
 ```bash
-./new-post.fish --title "My Awesome Post" --author "Jane Doe" --tags "nextjs,react" --excerpt "An amazing post about web dev" my-awesome-post
+./create-post.fish --title "My Awesome Post" --author "Jane Doe" --tags "nextjs,react" --excerpt "An amazing post about web dev" my-awesome-post
 ```
 
 Short flags:
 ```bash
-./new-post.fish -t "My Post" -a "Jane" -e "A cool post" my-post
+./create-post.fish -t "My Post" -a "Jane" -e "A cool post" my-post
 ```
 
 Ask for prompts:
 ```bash
-./new-post.fish --prompt my-post
+./create-post.fish --prompt my-post
 ```
 
 **Setup default values:**
@@ -112,7 +99,7 @@ blog/
 ├── .github/
 │   └── workflows/
 │       └── nextjs.yml      # GitHub Actions workflow for deployment
-├── new-post.fish           # Script to create new posts
+├── create-post.fish           # Script to create new posts
 ├── package.json
 └── README.md
 ```
@@ -127,7 +114,7 @@ blog/
 
 ## Script Reference
 
-The `new-post.fish` script supports the following options:
+The `create-post.fish` script supports the following options:
 
 | Flag | Shorthand | Description |
 |------|-----------|-------------|
