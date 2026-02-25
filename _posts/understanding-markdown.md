@@ -6,8 +6,6 @@ tags: ["markdown", "writing", "documentation"]
 excerpt: "Markdown is a lightweight markup language that you can use to add formatting to plain text documents."
 ---
 
-# Understanding Markdown
-
 Markdown is a simple way to format text that's easy to read and write. It's widely used for documentation, blogs, and README files.
 
 ## Basic Syntax

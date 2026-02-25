@@ -6,8 +6,6 @@ tags: ["nextjs", "react", "web development"]
 excerpt: "Learn how to build modern web applications with Next.js, the React framework for production."
 ---
 
-# Getting Started with Next.js
-
 Next.js is a powerful React framework that makes building web applications a breeze. In this post, we'll explore some of its key features.
 
 ## Why Next.js?

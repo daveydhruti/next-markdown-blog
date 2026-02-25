@@ -6,8 +6,6 @@ tags: ["blog", "markdown", "nextjs", "tutorial"]
 excerpt: "A step-by-step guide to creating a markdown-based blog that's easy to maintain and update."
 ---
 
-# Building a Blog with Markdown
-
 Creating a blog doesn't have to be complicated. With markdown files and a static site generator, you can have a blog up and running in no time.
 
 ## The Benefits of Markdown Blogs
