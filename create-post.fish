@@ -207,8 +207,6 @@ if test -n "$excerpt"
 end
 echo "---" >> $filepath
 echo "" >> $filepath
-echo "# $title" >> $filepath
-echo "" >> $filepath
 echo "Your content here..." >> $filepath
 
 echo "Created new post: $filepath"
